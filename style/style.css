@@ -99,7 +99,6 @@ body{
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 20px;
     
     @media (min-width: 855px){
         flex-direction: row;
