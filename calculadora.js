@@ -77,6 +77,10 @@ botonMultiplicar = document.querySelector('#multiplicar');
 botonMultiplicar.addEventListener('click', function(){
     insertarValor('*', false);
 })
+botonParentesisAbierto = document.querySelector('#parentesis-abierto');
+botonParentesisAbierto.addEventListener('click', function(){
+    insertarValor('(', false);
+})
 botonParentesis = document.querySelector('#parentesis-cerrado');
 botonParentesis.addEventListener('click', function(){
     insertarValor(')', false);
@@ -180,6 +184,7 @@ function insertarValor(valor, parentesis = false){
 }
 
 function moverSeleccion(valorDireccion){
+    display.readOnly = true;
     display.focus();
     const posicionSeleccion = display.selectionStart;
     let texto;
@@ -201,6 +206,7 @@ function moverSeleccion(valorDireccion){
     } else {
         display.setSelectionRange(posicionSeleccion + 1, posicionSeleccion + 1);
     }
+    setTimeout(() => { display.readOnly = false; }, 0);
 }
 
 function canva(texto){

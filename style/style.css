@@ -1,147 +1,17 @@
-h1, h2, h3, h4, p{
+h1, h2, h3, h4, p, strong, li, span, label{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-}
-aside{
-    background-color: #FFFFFF;
-    height: 100vh;
-    margin: 0;
-    width: 20%;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-y: scroll;
-    .imagen{
-        height: 25%;
-       img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-       }
-    }
-}
-
-.aside-info{
-    padding: 10px;
-    h2, h3{
-        text-align: center;
-    }
-    p{
-        text-align: justify;
-    }
-}
-
-.contenedor-calculadora{
-    text-align: center;
-    background-color: #FFFFFF;
-    padding: 10px;
+button{
+    border: none;
+    width: auto;
+    height: 35px;
     border-radius: 10px;
-    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    margin-top: 50px;
-    width: min-content;
-    display: grid;
-    height: 812px;
-    @media(min-width: 768px){
-        width: 700px;
-        height: 390.8px;
-        display: flex;
-        justify-content: space-between;
-    }
-    .contenedor-input{
-        width: 350px;
-        input[type="text"]{
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-            display: inline-block;
-            margin: 10px 5px;
-            border-radius: 10px;
-            border: solid 2px #979797;
-            height: 30px;
-            font-size: 20px;
-            width: 70%;
-        }
-        @media(min-width: 768px){
-            width: 450px;
-        }
-        .contenedor-ec{
-            display: flex;
-            justify-content: space-between;
-        }
-        button{
-            border: none;
-            width: auto;
-            height: 35px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 20px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-        }
-        .boton-calcular{
-            background-color: #0A02ED;
-            transition-property: background-color;
-            transition: 200ms;
-            color: white;
-            margin: 10px 5px;
-            &:hover{
-                background-color: #08009C;
-                cursor: pointer;
-            }
-        }
-        h2{
-            margin: 10px 0;
-        }
-        .teclado{
-            display: grid;
-            grid-template-columns: repeat(5, 2fr);
-            #AC, #DEL{
-                background-color: #ED3302;
-                color: #FFFFFF;
-                &:hover{
-                    background-color: #D13102;
-                    cursor: pointer;
-                }
-            }
-            #igual{
-                background-color: #0A02ED;
-                color: #FFFFFF;
-                &:hover{
-                    background-color: #08009C;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
-    .contenedor-resultado{
-        overflow-y: scroll;
-        border: solid 2px #e1e1e1;
-        margin: 10px 5px 5px 5px;
-        border-radius: 10px;
-        height: 375.8px;
-        width: auto;
-        padding: 0 10px;
-        @media(min-width: 768px){
-            overflow-y: scroll;
-            width: 258px;
-        }
-        .resultado{
-            margin: 10px 0;
-            &.error{
-                color: #ED3302;
-            }
-            &.exito{
-                color: #02D92A;
-            }
-        }
-    }
 }
+
 .boton-calculadora{
     margin: 5px;
     background-color: #e1e1e1;
@@ -156,5 +26,216 @@ aside{
     &:hover{
         cursor: pointer;
         background-color: #c4c4c4;
+    }
+}
+
+.boton-calcular{
+    background-color: #0A02ED;
+    transition-property: background-color;
+    transition-duration: 200ms;
+    color: white;
+    margin: 10px 5px 10px 0;
+    &:hover{
+        background-color: #08009C;
+        cursor: pointer;
+    }
+}
+
+#AC, #DEL{
+    background-color: #ED3302;
+    color: #FFFFFF;
+    &:hover{
+        background-color: #D13102;
+        cursor: pointer;
+    }
+}
+
+#igual{
+    background-color: #0A02ED;
+    color: #FFFFFF;
+    &:hover{
+        background-color: #08009C;
+        cursor: pointer;
+    }
+}
+
+nav{
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 10px;
+    .boton-nav{
+        color: #FFFFFF;
+        background-color: #0A02ED;
+        transition-property: background-color;
+        transition-duration: 200ms;
+        &:hover{
+            cursor: pointer;
+            background-color: #08009C;
+        }
+    }
+    @media (min-width: 855px){
+        display: none;
+    }
+}
+
+body{
+    background-color: #f4f4f9;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    margin: 0;
+    height: 100vh;
+}
+
+.contenedor{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    @media (min-width: 855px){
+        flex-direction: row;
+    }
+    
+    aside{
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+        width: 350px;
+        margin-top: 10px;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        padding: 0 10px;
+        text-align: center;
+        &.activo{
+            max-height: 10000px;
+            opacity: 1;
+            overflow-y: visible;
+        }
+        .membrete{
+            font-size: 10px;
+        }
+        .autores{
+            p{
+                font-size: 15px;
+            }
+        }
+        #aside-guia{
+            font-size: 20px;
+            text-align: justify;
+        }
+        .imagen{
+            height: 25%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        @media (min-width: 855px){
+            margin: 0;
+            display: flex;
+            border-radius: 0;
+            flex-direction: column;
+            width: 20%;
+            height: 100vh;
+            max-height: none;
+            overflow: visible;
+            opacity: 1;
+            transition: none;
+            .membrete{
+                margin: 0 0 10px 0;
+                h1{
+                    font-size: 15px;
+                    margin: 0;
+                }
+            }
+            .autores{
+                p{
+                    font-size: 15px;
+                    margin: 0;
+                }
+            }
+
+            &.aside-guia{
+                order: 5;
+                overflow-Y: scroll;
+            }
+        }
+    }
+    
+    
+    .contenedor-calculadora{
+        margin-top: 10px;
+        text-align: center;
+        background-color: #FFFFFF;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        width: min-content;
+        display: grid;
+        grid-template-columns: auto;
+        height: auto;
+        align-items: start;
+        @media (min-width: 855px){
+            margin-top: 0;
+        }
+        
+        .contenedor-input{
+            width: 350px;
+            height: 100%;
+            .contenedor-ec{
+                display: flex;
+                gap: 10px;
+                justify-content: space-between;
+                align-items: center;
+                input[type="text"]{
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: bold;
+                    display: inline-block;
+                    margin: 10px 0 10px 5px;
+                    border-radius: 10px;
+                    border: solid 2px #979797;
+                    height: 30px;
+                    font-size: 20px;
+                    width: 75%;
+                }
+            }
+            h2{
+                margin: 10px 0;
+            }
+            .teclado{
+                display: grid;
+                grid-template-columns: repeat(5, 2fr);
+            }
+        }
+        .contenedor-resultado{
+            overflow-y: scroll;
+            border: solid 2px #e1e1e1;
+            margin: 10px 5px 0;
+            border-radius: 10px;
+            height: 275px;
+            width: auto;
+            padding: 0 10px;
+            .resultado{
+                margin: 10px 0;
+                &.error{
+                    color: #ED3302;
+                }
+                &.exito{
+                    color: #02D92A;
+                }
+            }
+        }
     }
 }

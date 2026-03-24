@@ -1,12 +1,8 @@
 const contenedorResultado = document.querySelector('.contenedor-resultado');
-const botonCalcular = document.querySelector('#boton-calcular');
-const botonIgual = document.querySelector('#igual');
+const botonCalcular = document.querySelector('#calcular');
 
 document.addEventListener('DOMContentLoaded', function(){
     botonCalcular.addEventListener('click', function(){
-        calcularResultado();
-    });
-    botonIgual.addEventListener('click', function(){
         calcularResultado();
     });
 })
