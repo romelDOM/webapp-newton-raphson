@@ -8,7 +8,21 @@
     <script src="app.js"></script>
 </head>
 <body>
+    <aside class="aside">
+        <div class="imagen">
+            <img src="src/logouba.png" alt="logo-uba">
+        </div>
+        <div>
+            <h1></h1>
+        </div>
+
+        <div>
+
+        </div>
+    </aside>
     <div class="contenedor">
+
+
         <div class="contenedor-calculadora">
             <div class="contenedor-input">
                 <h2>Calculadora de Raíces de Funciones</h2>
@@ -56,8 +70,36 @@
         </div>
 
             
+    </div>
+    <aside class="aside aside-info">
+        <div class="info-contenido">
+            <h2>Guía de Uso</h2>
+
+            <h3>¿Cómo funciona?</h3>
+            <p>Esta calculadora utiliza el <strong>método de Newton-Raphson</strong> para encontrar las raíces reales de una función. El algoritmo evalúa la función en el rango de <strong>-100 a 100</strong>, identifica intervalos donde existe un cambio de signo y aplica iteraciones sucesivas hasta converger a la raíz con una precisión de 10<sup>-7</sup>.</p>
+
+            <h3>Sintaxis del Display</h3>
+            <p>Utilice el teclado en pantalla o escriba directamente la función usando la variable <strong>x</strong>. Operadores disponibles:</p>
+            <ul>
+                <li><strong>+, -, *, /</strong> — Operaciones básicas</li>
+                <li><strong>^</strong> — Potencia (ej: x^2)</li>
+                <li><strong>√</strong> — Raíz cuadrada (ej: sqrt(x))</li>
+                <li><strong>SIN, COS, TAN</strong> — Funciones trigonométricas</li>
+                <li><strong>e</strong> — Número de Euler</li>
+            </ul>
+            <p><strong>Ejemplos válidos:</strong> x^2-4, sin(x)+x, e^x-3</p>
+
+            <h3>Interpretación de Resultados</h3>
+            <p>Al calcular, la aplicación muestra las <strong>raíces encontradas</strong> con 5 decimales de precisión. Si la función tiene múltiples raíces en el rango evaluado, se mostrarán todas las raíces distintas.</p>
+
+            <h3>Errores</h3>
+            <ul>
+                <li><strong>"Error en la sintaxis"</strong> — La ecuación ingresada no es válida. Revise paréntesis, operadores y que la variable sea <strong>x</strong>.</li>
+                <li><strong>"No tiene raíces reales"</strong> — La función no cruza el eje X en el rango [-100, 100], o sus raíces son imaginarias.</li>
+            </ul>
         </div>
-        <script src="script.js"></script>
-        <script src="calculadora.js"></script>
-    </body>
-    </html>
+    </aside>
+<script src="script.js"></script>
+<script src="calculadora.js"></script>
+</body>
+</html>
