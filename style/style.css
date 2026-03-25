@@ -69,6 +69,7 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     padding: 0 10px;
+    box-sizing: border-box;
     .boton-nav{
         color: #FFFFFF;
         background-color: #0A02ED;
@@ -113,7 +114,8 @@ body{
         opacity: 0;
         transition: grid-template-rows 0.4s ease, opacity 0.3s ease, padding 0.3s ease, margin-top 0.3s ease;
         will-change: grid-template-rows, opacity;
-        width: 350px;
+        width: 100%;
+        max-width: 350px;
         margin-top: 0;
         border-radius: 10px;
         background-color: transparent;
@@ -189,14 +191,15 @@ body{
     
     
     .contenedor-calculadora{
-        margin-top: 10px;
+        margin: 10px auto 0;
         text-align: center;
         background-color: #FFFFFF;
         padding: 10px;
         border-radius: 10px;
-        text-align: center;
         box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
         width: min-content;
+        max-width: calc(100vw - 20px);
+        box-sizing: border-box;
         display: grid;
         grid-template-columns: auto;
         height: auto;
@@ -207,6 +210,7 @@ body{
         
         .contenedor-input{
             width: 350px;
+            max-width: calc(100vw - 40px);
             height: 100%;
             .contenedor-ec{
                 display: flex;
@@ -236,11 +240,12 @@ body{
         .contenedor-resultado{
             overflow-y: scroll;
             border: solid 2px #e1e1e1;
-            margin: 10px 5px 0;
+            margin: 10px auto 0;
             border-radius: 10px;
             height: 275px;
-            width: auto;
+            width: calc(100% - 10px);
             padding: 0 10px;
+            box-sizing: border-box;
             .resultado{
                 margin: 10px 0;
                 &.error{
