@@ -105,10 +105,11 @@ body{
     }
     
     aside{
-        max-height: 0;
-        overflow: hidden;
+        display: grid;
+        grid-template-rows: 0fr;
         opacity: 0;
-        transition: max-height 0.4s ease, opacity 0.3s ease;
+        transition: grid-template-rows 0.4s ease, opacity 0.3s ease;
+        will-change: grid-template-rows, opacity;
         width: 350px;
         margin-top: 10px;
         border-radius: 10px;
@@ -116,10 +117,13 @@ body{
         box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
         padding: 0 10px;
         text-align: center;
+        > *{
+            overflow: hidden;
+            min-height: 0;
+        }
         &.activo{
-            max-height: 10000px;
+            grid-template-rows: 1fr;
             opacity: 1;
-            overflow-y: visible;
         }
         .membrete{
             font-size: 10px;
@@ -148,10 +152,11 @@ body{
             flex-direction: column;
             width: 20%;
             height: 100vh;
-            max-height: none;
+            grid-template-rows: none;
             overflow: visible;
             opacity: 1;
             transition: none;
+            will-change: auto;
             .membrete{
                 margin: 0 0 10px 0;
                 h1{
