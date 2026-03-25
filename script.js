@@ -3,7 +3,11 @@ const botonCalcular = document.querySelector('#calcular');
 
 document.addEventListener('DOMContentLoaded', function(){
     botonCalcular.addEventListener('click', function(){
+        botonCalcular.readOnly = true;
         calcularResultado();
+        setTimeout(() => { 
+            botonCalcular.readOnly = false; 
+        }, 0);
     });
 })
 

@@ -74,6 +74,7 @@ botonDEL.addEventListener('click', function(){
 })
 botonAC = document.querySelector('#AC');
 botonAC.addEventListener('click', function(){
+    display.readOnly = true;
     display.value = '';
     setTimeout(() => { 
         display.readOnly = false; 
