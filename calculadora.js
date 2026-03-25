@@ -1,6 +1,5 @@
 const display = document.querySelector('#input-ec');
 const botones = document.querySelectorAll('.boton-calculadora');
-display.focus();
 
 botones.forEach(boton => {
     boton.addEventListener('mousedown', function(e){
@@ -76,6 +75,9 @@ botonDEL.addEventListener('click', function(){
 botonAC = document.querySelector('#AC');
 botonAC.addEventListener('click', function(){
     display.value = '';
+    setTimeout(() => { 
+        display.readOnly = false; 
+    }, 0);
 })
 botonMultiplicar = document.querySelector('#multiplicar');
 botonMultiplicar.addEventListener('click', function(){
@@ -186,7 +188,9 @@ function insertarValor(valor, parentesis = false){
     display.setSelectionRange(nuevaSeleccion, nuevaSeleccion);
     display.scrollLeft = pixelesAncho - (display.clientWidth / 2);
     display.focus();
-    setTimeout(() => { display.readOnly = false; }, 0);
+    setTimeout(() => { 
+        display.readOnly = false; 
+    }, 0);
 }
 
 function moverSeleccion(valorDireccion){
@@ -212,7 +216,9 @@ function moverSeleccion(valorDireccion){
     } else {
         display.setSelectionRange(posicionSeleccion + 1, posicionSeleccion + 1);
     }
-    setTimeout(() => { display.readOnly = false; }, 0);
+    setTimeout(() => { 
+        display.readOnly = false; 
+    }, 0);
 }
 
 function canva(texto){
