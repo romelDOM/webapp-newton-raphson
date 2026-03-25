@@ -46,6 +46,7 @@ botonRaiz.addEventListener('click', function(){
 })
 botonDEL = document.querySelector('#DEL');
 botonDEL.addEventListener('click', function(){
+    display.readOnly = true;
     display.focus();
     const ecuacion = display.value;
     const extensionEcuacion = ecuacion.length;
@@ -68,6 +69,9 @@ botonDEL.addEventListener('click', function(){
         display.setSelectionRange(nuevaSeleccion, nuevaSeleccion);
         display.scrollLeft = pixelesAncho - (display.clientWidth / 2);        
     }
+    setTimeout(() => {
+        display.readOnly = false; 
+    }, 0);
 })
 botonAC = document.querySelector('#AC');
 botonAC.addEventListener('click', function(){
@@ -156,6 +160,7 @@ botonDerecha.addEventListener('click', function(){
 })
 
 function insertarValor(valor, parentesis = false){
+    display.readOnly = true;
     display.focus();
     const ecuacion = display.value;
     const extensionEcuacion = ecuacion.length;
@@ -181,6 +186,7 @@ function insertarValor(valor, parentesis = false){
     display.setSelectionRange(nuevaSeleccion, nuevaSeleccion);
     display.scrollLeft = pixelesAncho - (display.clientWidth / 2);
     display.focus();
+    setTimeout(() => { display.readOnly = false; }, 0);
 }
 
 function moverSeleccion(valorDireccion){
