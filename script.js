@@ -1,5 +1,10 @@
 const contenedorResultado = document.querySelector('.contenedor-resultado');
 const botonCalcular = document.querySelector('#calcular');
+const display = document.querySelector('#input-ec');
+
+botonCalcular.addEventListener('mousedown', function(e){
+    e.preventDefault();
+})
 
 document.addEventListener('DOMContentLoaded', function(){
     botonCalcular.addEventListener('click', function(){
@@ -8,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 function calcularResultado(){
-    botonCalcular.readOnly = true;
-    const ecuacion = document.querySelector('#input-ec').value;
+    display.readOnly = true;
+    const ecuacion = display.value;
     const resultados = Module.calcularRaizWeb(ecuacion);
     
     let resultadosJS = [];
@@ -66,6 +71,6 @@ function calcularResultado(){
 
     resultados.delete();
     setTimeout(() => { 
-        botonCalcular.readOnly = false; 
+        display.readOnly = false; 
     }, 0);
 }
