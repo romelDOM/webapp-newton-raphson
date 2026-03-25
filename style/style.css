@@ -122,7 +122,7 @@ body{
         box-shadow: none;
         padding: 0 10px;
         text-align: center;
-        > *{
+        > **{
             overflow: hidden;
             min-height: 0;
         }
@@ -145,6 +145,7 @@ body{
         #aside-guia{
             font-size: 20px;
             text-align: justify;
+            overflow-y: scroll;
         }
         .imagen{
             height: auto;
@@ -162,7 +163,7 @@ body{
             width: 20%;
             height: 100vh;
             grid-template-rows: none;
-            overflow: visible;
+            overflow-Y: scroll;
             opacity: 1;
             transition: none;
             will-change: auto;
