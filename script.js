@@ -3,18 +3,15 @@ const botonCalcular = document.querySelector('#calcular');
 
 document.addEventListener('DOMContentLoaded', function(){
     botonCalcular.addEventListener('click', function(){
-        botonCalcular.readOnly = true;
         calcularResultado();
-        setTimeout(() => { 
-            botonCalcular.readOnly = false; 
-        }, 0);
     });
 })
 
 function calcularResultado(){
+    botonCalcular.readOnly = true;
     const ecuacion = document.querySelector('#input-ec').value;
     const resultados = Module.calcularRaizWeb(ecuacion);
-
+    
     let resultadosJS = [];
     for(let i = 0; i < resultados.size(); i++){
         resultadosJS.push(resultados.get(i));
@@ -57,7 +54,7 @@ function calcularResultado(){
         tituloResultado.classList.add('resultado');
         tituloResultado.textContent = 'Raíces encontradas:';
         contenedorResultado.appendChild(tituloResultado);
-
+        
         resultadosFinal.forEach(_resultadoFinal => {
             const resultadoDisplay = document.createElement('H2');
             resultadoDisplay.classList.add('exito');
@@ -68,4 +65,7 @@ function calcularResultado(){
     }
 
     resultados.delete();
+    setTimeout(() => { 
+        botonCalcular.readOnly = false; 
+    }, 0);
 }
