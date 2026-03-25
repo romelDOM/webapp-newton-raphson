@@ -1,4 +1,3 @@
-const display = document.querySelector('#input-ec');
 const botones = document.querySelectorAll('.boton-calculadora');
 
 botones.forEach(boton => {

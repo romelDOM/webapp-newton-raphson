@@ -44,11 +44,14 @@ vector<double> calcularRaizWeb(string ecuacion_cstr) {
     };
     
     vector<double> intercepciones;
+    const double eps_zero = 1e-9;
 
     double a = -100, b = -99.5;
     while (a < 0) {
         double fa = f(a), fb = f(b);
-        if(std::isfinite(fa) && std::isfinite(fb) && fa * fb < 0){
+        if(std::isfinite(fa) && abs(fa) < eps_zero){
+            intercepciones.push_back(a);
+        } else if(std::isfinite(fa) && std::isfinite(fb) && fa * fb < 0){
             intercepciones.push_back(a);
         }
         a += 0.5;
@@ -58,7 +61,9 @@ vector<double> calcularRaizWeb(string ecuacion_cstr) {
     a = 0; b = 0.5;
     while (a < 100) {
         double fa = f(a), fb = f(b);
-        if(std::isfinite(fa) && std::isfinite(fb) && fa * fb < 0){
+        if(std::isfinite(fa) && abs(fa) < eps_zero){
+            intercepciones.push_back(a);
+        } else if(std::isfinite(fa) && std::isfinite(fb) && fa * fb < 0){
             intercepciones.push_back(a);
         }
         a += 0.5;
